@@ -1,0 +1,22 @@
+<app-modal *ngIf="modal" 
+
+[msgModal]="msgModal" 
+[taskItem]="taskItem"
+(completeTask)="onCompleteTask($event)"
+(closeModal)="onCloseModal($event)">
+</app-modal>
+<div class="page-container">
+    <div class="page-header">
+            <h2>Lista de Tarefas</h2>
+            <button routerLink="/create-task"><i class="fas fa-plus"></i></button>
+    </div>
+    <div class="page-content">
+        <ul>
+            <li *ngFor="let task of tasks" 
+            [class]="task.complete ? 'complete' : ''" 
+            (click)="onShowModal(task.complete ? 'Refazer a tarefa ?' : 'Concluir a tarefa?', task)">
+             {{task.title}}
+            </li>
+        </ul>
+    </div>
+</div>

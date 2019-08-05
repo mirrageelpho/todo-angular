@@ -1,0 +1,16 @@
+<div class="page-header">
+    <h2>Nova Tarefa</h2>
+    <button routerLink="/"><i class="fas fa-chevron-left"></i></button>
+</div>
+<div class="page-content">
+    <h4>Título</h4>
+    <div class="form">
+        <input 
+        type="text" 
+
+        #title
+        >
+        <button routerLink="/tasks" (click)="create(title.value)"><i class="fas fa-plus"></i></button>
+    </div>
+</div>
+
